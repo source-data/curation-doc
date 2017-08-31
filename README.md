@@ -21,5 +21,6 @@ The HTML document is formatted using the @ReSpec tools (https://github.com/w3c/r
    5. Reporter components
    6. Normalizing components
    7. Experimental variables
-A. Tagging experimental assays
-B. Representing 'omics' experiments
+6. Appendices
+   1. Tagging experimental assays
+   2. Representing 'omics' experiments
