@@ -90,7 +90,7 @@
       	<section>
 		   <h2>Adding terms missing from the figure legend</h2>
 		   <p>Terms can be added as <dfn data-lt="floating tag">floating tags</dfn> to complement the description of an experiment with <a>entities</a> that are missing from the text of the legend. These <a>entities</a> typically appear on the image of the figure but not in the legend.</p> 
-		   <p>The use of <a>floating tags</a> SHOULD be restricted only to <a>entities</a> with role <a>intervention</a> or <a>assayed component</a> or <a>experimental variable</a>.</p>
+		   <p>The use of <a>floating tags</a> SHOULD be restricted only to <a>entities</a> with role <a>intervention</a> or <a>assayed component</a> or <a>experimental variable</a>.If one or several of the 3 elements are missing, they SHOULD be annoated as <a>floating tags</a>.</p>
 		   <p>When a generic term is used, such as "cell" or "transcripts", to refer to a specific <a>entity</a>, ie a specific cell line or a specific mRNA, a <a>floating tag</a> SHOULD be used to refer explicitly to the specific <a>entity</a>.</p>
 		</section>
       </section>
@@ -201,14 +201,14 @@
     
     <section class="appendix">
     <h2>Tagging experimental assays</h2>
-    <p>In addition to entities, SourceData is also experimenting with the tagging of non-entity terms. In particular, the <dfn data-lt="experimental assay|experimental assays">experimental assay</dfn> used to observed or measure the <a>assayed components</a> of an experiment are tagged and normalized to identifiers eithre from the BioAssay ontology (<a href="bioassayontology.org/">BAO</a>) or from the Ontology for Biomedical Investigations (<a href="http://obi-ontology.org/">OBI</a>).</p>
+    <p>In addition to entities, SourceData is also experimenting with the tagging of non-entity terms. In particular, the <dfn data-lt="experimental assay|experimental assays">experimental assay</dfn> used to observed or measure the <a>assayed components</a> of an experiment are tagged and normalized to identifiers either from the BioAssay ontology (<a href="bioassayontology.org/">BAO</a>) or from the Ontology for Biomedical Investigations (<a href="http://obi-ontology.org/">OBI</a>).Experimental assays that correspond to the perturbed <a>entity</a> should not be tagged.</p>
     </section>
     <section class="appendix">
     <h2>Representing 'omics' experiments</h2>
     <p>For experiments performing a large number of measurements (>15-20), for example in metabolomics, genomics, transcriptomics and proteomics, the assayed components cannot be listed individually. The following tentative guidelines are then followed:
     <ul><li>The reserved expression <code>'multiple components'</code> should be included as floating tag, with the relevant entity <a>type</a> and with the role <a>assayed component</a>.</li>
     <li>Both the measurement type (protein expression, protein-DNA interactions, protein-protein interactions, etc...) and the assay technology (experimental platform such as the sequencing platform, mass spec platform, etc...) as mentioned in Materials & Methods should be tagged as <a>experimental assay</a>, if necessary as <a>floating tag</a>.</li>
-    <li>The experimental system that is profiled should be added as <a>biological component</a>, even if it requires adding a <a>floating tag</a>.</li>
+    <li>The experimental system that is profiled should be added as <a>biological component</a>, even if it requires adding a <a>floating tag</a>. For panels representing different analyses of the same underlying raw data (e.g. heatmap, PCA, correlation matrix), only the primary representation SHOULD be tagged.</li>
     </ul></p>
     <aside class="example">In proteomics, if mass spectrometry is used to measure protein-protein interactions in HeLa cell extracts, for example, the terms <code>'mass spectrometry'</code> (<a href="http://identifiers.org/bao/0000055"><code>BAO:0000055</code></a>) and <code>'protein-protein interaction assay'</code> (<a href="http://identifiers.org/bao/0002990"><code>BAO:0002990</code></a>) will both be added as <a>experimental assay</a> <a>floating tags</a>, as well as <code>'HeLa'</code> (<a href="http://web.expasy.org/cellosaurus/CVCL_0030"><code>CL/CVCL:CVCL_0030</code></a>) as general <a>biological component</a> that specifies the experimental system.</aside>
     </section>
