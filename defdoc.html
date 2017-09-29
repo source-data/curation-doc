@@ -149,11 +149,7 @@
            <li><a>Experimental variable</a></li>
         </ul>
 
-      <p>In addition, the following accessory identifiers are defined: </p>
-      <ul>
-          <li><a>Time-related variable</a></li>
-          <li><a>Physical variable</a></li>
-      </ul>
+    
 
         </section>
         
@@ -206,16 +202,7 @@
       </section>
       
 
-      <section>
-          <h2>Time-related variables</h2>
-          <p>A <dfn data-lt="time-related variable"> Time-related variable</dfn> refers to either a time-course experiment where there are multiple observation time points or to a developmental stage (e.g. P10, E17, etc.)</p>
-      </section>
-  
-  
-      <section>
-          <h2>Physical variable</h2>
-          <p>A <dfn data-lt="physical variable"> Physical variable</dfn> refers to particular experimental conditions, e.g. 'cold exposure', 'footshock', etc.</p>
-      </section>
+
               
     </section>
 
@@ -229,7 +216,19 @@
     <aside class="note">At present, SourceData only captures experimental assays used to actually collect data, i.e., associated with the <a>assayed component</a>. The experimental assay used to induce the <a>intervention</a> should not be tagged. In addition, SourceData strives to capture the <a>experimental assay</a> itself and not necessarily the METHOD. If both the assay and the method are explicitly mentioned in the figure legend, SourceData captures both. If not, only the <a>experimental assay</a> is captured, either as tag in the figure legend or as a floating tag if missing.</aside>  
     <aside class="example">If a figure represents images from an immunostaining, it suffices to annotate "immunostaining" as the <a>experimental assay</a> and there is no need to add a floating tag for "microscopy" if this is not present in the figure legend</a>.</aside> 
   </section>
+				   
+				   
+<section class="appendix">
+    <h2>Time-related variables</h2>
+   <p><dfn data-lt="time-related variable"> Time-related variable</dfn>: add a floating tag “time course” or “age” to indicate comparison of an intervention or an assayed component over time within an experiment.</p>
+  </section>
+<section class="appendix">
+    <h2>Physical variables </h2>
+<p>A <dfn data-lt="physical variable"> Physical variable</dfn> refers to particular experimental conditions, e.g. 'cold exposure', 'footshock', etc. Add them only when explicitly mentioned in the figure legend.</p>
+  </section>
 
+				   
+				   
 
     <section class="appendix">
       <h2>Special cases: FACS, cell cycle phases and DNA staining</h2>
