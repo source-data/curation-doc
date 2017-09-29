@@ -139,7 +139,7 @@
     	
     	<section>
     	<h2>Introduction</h2>
-    	<p>Biological <a>components</a> listed in the caption of a figure each play a different <dfn data-lt="roles">role</dfn> in the experimental design: some <a>components</a> are altered in a controlled manner, other remain untouched by the experimenter, and some are directly or indirectly assayed to perform measurements or observations. Accordingly, the following <a>roles</a> are defined:</p>
+    	<p>Biological <a>components</a> listed in the caption of a figure each play a different <dfn data-lt="roles">role</dfn> in the experimental design: some <a>components</a> are altered in a controlled manner, others remain untouched by the experimenter, and some are directly or indirectly assayed to perform measurements or observations. Accordingly, the following <a>roles</a> are defined:</p>
         <ul>
            <li><a>Biological component</a></li>
            <li><a>Assayed component</a></li>
@@ -147,12 +147,15 @@
            <li><a>Reporter component</a></li>
            <li><a>Normalizing component</a></li>
            <li><a>Experimental variable</a></li>
-        <ul>
+        </ul>
+
+    
+
         </section>
         
     	<section>
     	<h2>Biological components</h2>
-    	A <dfn data-lt="biological components">biological component</dfn> is a generic category for any experimentally relevant <a>component</a> which does not fit any of the other defined roles within SourceData..
+    	A <dfn data-lt="biological components">biological component</dfn> is a generic category for any experimentally relevant <a>component</a> which does not fit any of the other defined roles within SourceData. Often it will contain the organism, the cell, or a generic treatment that is present across all conditions.
     	</section>
     	
     	<section>
@@ -160,7 +163,7 @@
     	<p>An <dfn data-lt="assayed components">assayed component</dfn> is the <a>component</a> that is measured or observed.</p>
     	<aside class="example">The proteins detected on a Western blot are the <a>assayed components</a> with the exception of the loading control, if any, which is a <a>normalizing component</a> (see below).</aside>
     	<aside class="note">If a molecular marker, for example  the protein EEA1, is assayed to visualize a higher order structure, for example endosomal vesicles, the marker (EEA1 in this example) is tagged as an <a>assayed component</a>. The higher order structure (endosomal vesicles in this example) is <a>tagged</a> as <a>assayed component</a> only if it is explicitly highlighted on the image or a property of the entity (such as number/localisation) is mentioned in the text of the legend.</aside>
-    	</section>
+      </section>
     	
     	<section>
     	<h2>Interventions</h2>
@@ -196,22 +199,59 @@
     	<h2>Experimental variables</h2>
     	<p>When a <a>component</a> is used to compare multiple experimental groups but it is not possible to clearly infer a cause-and-effect relationship between this <a>component</a> and the <a>assayed components</a> of the experiment, the <a>component</a> is said to be an <dfn data-lt="experimental variables">experimental variable</dfn>.</p>
     	<aside class="example">If the expression of a given gene is measured across tissues and cell lines, including liver, muscle, brain, HEK293 and HeLa cells, the tissues or cell types are tagged as <a>experimental variables</a>.</aside>
-    	</section>
+      </section>
+      
+
+
+              
     </section>
+
+  </section>
+            
+    
     
     <section class="appendix">
     <h2>Tagging experimental assays</h2>
-    <p>In addition to entities, SourceData is also experimenting with the tagging of non-entity terms. In particular, the <dfn data-lt="experimental assay|experimental assays">experimental assay</dfn> used to observed or measure the <a>assayed components</a> of an experiment are tagged and normalized to identifiers either from the BioAssay ontology (<a href="bioassayontology.org/">BAO</a>) or from the Ontology for Biomedical Investigations (<a href="http://obi-ontology.org/">OBI</a>).Experimental assays that correspond to the perturbed <a>entity</a> should not be tagged.</p>
-    </section>
+    <p>In addition to entities, SourceData is also experimenting with the tagging of non-entity terms. In particular, the <dfn data-lt="experimental assay|experimental assays">experimental assay</dfn> used to observed or measure the <a>assayed components</a> of an experiment are tagged and normalized to identifiers either from the BioAssay ontology (<a href="bioassayontology.org/">BAO</a>) or from the Ontology for Biomedical Investigations (<a href="http://obi-ontology.org/">OBI</a>)</p>
+    <aside class="note">At present, SourceData only captures experimental assays used to actually collect data, i.e., associated with the <a>assayed component</a>. The experimental assay used to induce the <a>intervention</a> should not be tagged. In addition, SourceData strives to capture the <a>experimental assay</a> itself and not necessarily the METHOD. If both the assay and the method are explicitly mentioned in the figure legend, SourceData captures both. If not, only the <a>experimental assay</a> is captured, either as tag in the figure legend or as a floating tag if missing.</aside>  
+    <aside class="example">If a figure represents images from an immunostaining, it suffices to annotate "immunostaining" as the <a>experimental assay</a> and there is no need to add a floating tag for "microscopy" if this is not present in the figure legend</a>.</aside> 
+  </section>
+				   
+				   
+<section class="appendix">
+    <h2>Time-related variables</h2>
+   <p><dfn data-lt="time-related variable"> Time-related variable</dfn>: add a floating tag “time course” or “age” to indicate comparison of an intervention or an assayed component over time within an experiment.</p>
+  </section>
+<section class="appendix">
+    <h2>Physical variables </h2>
+<p>A <dfn data-lt="physical variable"> Physical variable</dfn> refers to particular experimental conditions, e.g. 'cold exposure', 'footshock', etc. Add them only when explicitly mentioned in the figure legend.</p>
+  </section>
+
+				   
+				   
+
+    <section class="appendix">
+      <h2>Special cases: FACS, cell cycle phases and DNA staining</h2>
+      <p>Some experimental designs are unique in nature. For the following cases, these guidelines should be observed: 
+      <ul><li>FACS experiments: for FACS experiments, SourceData captures both the cells and the DNA (or whichever element is stained and sorted) as <a>assayed components</a></li>
+        <li>Cell cycle phases: at present, SourceData does not include cell cycle phases as time elements. Cell cycle phases may be added when appropriate to <a>experimental variable</a> or <a>biological component</a> as class 'unknown'</li>
+        <li>DNA staining: for DNA stains like BrdU, EdU, etc., SourceData captures DNA as the <a>assayed component</a> and 'BrdU staining' as the <a>experimental assay</a></li>
+      </ul></p>
+      </section>
     <section class="appendix">
     <h2>Representing 'omics' experiments</h2>
     <p>For experiments performing a large number of measurements (>15-20), for example in metabolomics, genomics, transcriptomics and proteomics, the assayed components cannot be listed individually. The following tentative guidelines are then followed:
-    <ul><li>The reserved expression <code>'multiple components'</code> should be included as floating tag, with the relevant entity <a>type</a> and with the role <a>assayed component</a>.</li>
+   <ul>
+   <li>The reserved expression <code>'multiple components'</code> should be included as floating tag, with the relevant entity <a>type</a> and with the role <a>assayed component</a>.</li>
     <li>Both the measurement type (protein expression, protein-DNA interactions, protein-protein interactions, etc...) and the assay technology (experimental platform such as the sequencing platform, mass spec platform, etc...) as mentioned in Materials & Methods should be tagged as <a>experimental assay</a>, if necessary as <a>floating tag</a>.</li>
     <li>The experimental system that is profiled should be added as <a>biological component</a>, even if it requires adding a <a>floating tag</a>.</li> 
-    <li>For panels representing different analyses of the same underlying raw data (e.g. heatmap, PCA, correlation matrix), only the primary representation should be tagged.</li>
-    </ul></p>
     <aside class="example">In proteomics, if mass spectrometry is used to measure protein-protein interactions in HeLa cell extracts, for example, the terms <code>'mass spectrometry'</code> (<a href="http://identifiers.org/bao/0000055"><code>BAO:0000055</code></a>) and <code>'protein-protein interaction assay'</code> (<a href="http://identifiers.org/bao/0002990"><code>BAO:0002990</code></a>) will both be added as <a>experimental assay</a> <a>floating tags</a>, as well as <code>'HeLa'</code> (<a href="http://web.expasy.org/cellosaurus/CVCL_0030"><code>CL/CVCL:CVCL_0030</code></a>) as general <a>biological component</a> that specifies the experimental system.</aside>
+    
+    <li>For panels representing different analyses of the same underlying raw data (e.g. heatmap, PCA, correlation matrix), only the <b>primary representation</b>, i.e., first instance of the data should be tagged.</li>
+    <aside class="example">In a microarray experiments, the <a>assayed component</a> will be <code>'multiple components'</code> of class 'gene'. If for example the heatmap is the primary representation of the data, then the floating tag will be associated with that panel. If the next panel is for example a PCA plot, then this is considered the second instance of the same primary data and it SHOULD not be tagged.</aside>
+    </ul> 
+  
+
     </section>
   </body>
 </html>
