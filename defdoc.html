@@ -149,12 +149,16 @@
            <li><a>Experimental variable</a></li>
         </ul>
 
-    
+        <aside class="note">For all types of entities, if there are multiple instances of the same entity in the figure legend, all instances of the tag should be captured.</aside>
 
         </section>
         
     	<section>
-    	<h2>Biological components</h2>
+      
+      
+
+      <h2>Biological components</h2>
+      
     	A <dfn data-lt="biological components">biological component</dfn> is a generic category for any experimentally relevant <a>component</a> which does not fit any of the other defined roles within SourceData. Often it will contain the organism, the cell, or a generic treatment that is present across all conditions.
     	</section>
     	
@@ -175,7 +179,9 @@
     	<aside class="example">If cells are treated with different doses of the PKA inhibitor H89, H89 is tagged as the <a>intervention</a>. </aside>
         <aside class="note">In experiments that test the action of an entity over time, the entity is tagged as an intervention only if a control group is tested or if the the time=0 is also shown as point of comparison.</aside>
         <aside class="example">In a siRNA-mediated knock down experiment, the gene targeted by the siRNA is tagged as an <a>intervention</a>.</aside>
-    	<aside class="note">An <a>intervention</a> MUST involve controlled experimental conditions. It is therefore common that control experimental groups are treated with a neutral compound, for example the solvent used to dissolve the administered drug. By convention, such <a>components</a> MUST be assigned the generic role <a>biological component</a>.</aside>
+      <aside class="note">An <a>intervention</a> MUST involve controlled experimental conditions. It is therefore common that control experimental groups are treated with a neutral compound, for example the solvent used to dissolve the administered drug. By convention, such <a>components</a> MUST be assigned the generic role <a>biological component</a>.</aside>
+      <aside class="note">In transfection experiments for overexpression, the main entity of the construct used for transfection should be labelled as <a>intervention</a> of type gene and if detected, the protein should be tagged as <a>assayed component</a> of type protein.</aside>
+      
     	</section>
     	
     	<section>
