@@ -34,9 +34,23 @@
 
     </script>
     <style>
-       html {background: white !important}
-       section figure {font-weight: bold}
-       section figure span.fig-title {font-weight: normal}
+       html {
+         background: white !important
+       }
+       figure {
+         font-weight: bold;
+       }
+       figure span.fig-title {
+         font-weight: normal;
+       }
+       figure a:visited {
+        border-bottom-color: white ;
+       }
+       figure a:hover {
+        border-bottom-color: white ;
+       }
+
+
     </style>
   </head>
   <body>
@@ -81,12 +95,14 @@
       	   <h2>Tagging terms in figure legends</h2>
       	   <p>To be tagged, a panel MUST report experimental data. In the text of a panel legend, terms that correspond to specific biological and chemical <a>entities</a> SHOULD all be <a>tagged</a>.</p>
            <aside class="note">Panels that present schematics, computational simulation results, overviews, workflows are not tagged.</aside>
-           <a href = 'scheme1.png' target = 'blank'>
+           
            <figure id = 'scheme'>
-             <img src = 'scheme1.png' alt = ''>
+              <a href = 'scheme1.png' target = 'blank'> 
+                <img src = 'scheme1.png' alt = ''>
+              </a>
              <figcaption>Schemes like the one shown above do not need to be annotated</figcaption>
            </figure>
-          </a>
+          
       	   <p>In general, generic terms referring to broad classes of biological <a>components</a> (eg 'proteins', 'cells', 'animals') SHOULD NOT be <a>tagged</a> unless they refer to  the object of an assay.<p>
       	   <p>Some terms such as those referring to <a>proteins</a> or <a>genes</a> can be appended with prefixes or suffixes that indicate a post-translational modification, a mutation or other variations of the actual base term. In such case, pre- or suffixes SHOULD be left out and only the base term SHOULD be <a>tagged</a>. In other cases, a prefix is added to an entity to denote a species origin, in which case the prefix SHOULD be kept.</p>
       	   <aside class="example">If the cancer-related mutant form of B-RAF is mentioned as <code>'B-RAF(V600E)'</code> in the text of the legend, the suffix <code>'(V600E)'</code> indicating the mutation should be ignored and only <code>'B-RAF'</code> SHOULD be <a>tagged</a>. Similarly if <code>'p-Akt1'</code> is designating the phosphorylated form of Akt1, only <code>'Akt1'</code> SHOULD be tagged and the prefix <code>'p-'</code> SHOULD be left out.</aside>
@@ -99,12 +115,14 @@
 		   <h2>Adding terms missing from the figure legend</h2>
 		   <p>Terms can be added as <dfn data-lt="floating tag">floating tags</dfn> to complement the description of an experiment with <a>entities</a> that are missing from the text of the legend. These <a>entities</a> typically appear on the image of the figure but not in the legend.</p> 
        <p>The use of <a>floating tags</a> SHOULD be restricted only to <a>entities</a> with role <a>intervention</a> or <a>assayed component</a> or <a>experimental variable</a>.If one or several of the 3 elements are missing, they SHOULD be annoated as <a>floating tags</a>.</p>
-       <a href = 'floating_tag.png' target = 'blank'>
+       
        <figure id = 'floating_tag'>
+         <a href = 'floating_tag.png' target = 'blank'>
           <img src = 'floating_tag.png' alt = ''>
+        </a>    
           <figcaption>Key elements missing in the figure caption should be added as a floating tag: in this example, the <a>assayed component</a> AGO2 is missing and was added as a floating tag.</figcaption>
         </figure>
-      </a>
+      
 		   <p>When a generic term is used, such as "cell" or "transcripts", to refer to a specific <a>entity</a>, ie a specific cell line or a specific mRNA, a <a>floating tag</a> SHOULD be used to refer explicitly to the specific <a>entity</a>.</p>
 		</section>
       </section>
@@ -180,12 +198,14 @@
     	<h2>Assayed components</h2>
     	<p>An <dfn data-lt="assayed components|assayed">assayed component</dfn> is the <a>component</a> that is measured or observed.</p>
       <aside class="example">The proteins detected on a Western blot are the <a>assayed components</a> with the exception of the loading control, if any, which is a <a>normalizing component</a> (see below).</aside>
-      <a href = 'normalizing_western.png' target = 'blank'>
+      
       <figure id = 'normalizing_western'>
-        <img src = 'normalizing_western.png' alt = ''>
+        <a href = 'normalizing_western.png' target = 'blank'>
+          <img src = 'normalizing_western.png' alt = ''>
+        </a>
         <figcaption>In the example above, tubulin is the normalizing component.</figcaption>
       </figure>
-      </a>
+      
     	<aside class="note">If a molecular marker, for example  the protein EEA1, is assayed to visualize a higher order structure, for example endosomal vesicles, the marker (EEA1 in this example) is tagged as an <a>assayed component</a>. The higher order structure (endosomal vesicles in this example) is <a>tagged</a> as <a>assayed component</a> only if it is explicitly highlighted on the image or a property of the entity (such as number/localisation) is mentioned in the text of the legend.</aside>
       </section>
     	
@@ -196,12 +216,14 @@
     	<aside class="warning"><p>If a drug (cycloheximide, for example) is applied across <b>ALL</b> experimental groups, it is <b>NOT</b> considered as an <a>intervention</a>, since there is no control group to compare the effect of the drug across conditions. An <a>intervention</a> MUST be controlled. Accordingly, in such context, the drug SHOULD be tagged as <a>biological component</a>.</p>
         <p>Similarly, if a cell strain harboring the same genetic mutation is used across <b>ALL</b> experimental groups, the mutated gene is <b>NOT</b> an <a>intervention</a> but a generic <a>biological component</a>.</p></aside>
         
-        <a href = 'biological_component.png' target = 'blank'>
+        
         <figure id = 'biological component'>
-          <img src = 'biological_component.png' alt = ''>
+          <a href = 'biological_component.png' target = 'blank'>
+           <img src = 'biological_component.png' alt = ''>
+          </a>  
           <figcaption>MOB1A and LATS2 are both overexpressed across all conditions in this experiment, i.e., they are not controlled for. The only entity that is differentially manipulated in this experiment is TRIP6. Thus, both MOB1A and LATS2 are considered <a>biological components</a> and TRIP6 is cosidered the <a>intervention</a></figcaption>
         </figure>
-        </a>  
+        
 
 
 
@@ -212,12 +234,14 @@
       <aside class="note">An <a>intervention</a> MUST involve controlled experimental conditions. It is therefore common that control experimental groups are treated with a neutral compound, for example the solvent used to dissolve the administered drug. By convention, such <a>components</a> MUST be assigned the generic role <a>biological component</a>.</aside>
       <aside class="note">In transfection experiments for overexpression, the main entity of the construct used for transfection should be labelled as <a>intervention</a> of type gene and if detected, the protein should be tagged as <a>assayed component</a> of type protein.</aside>
       
-      <a href = 'intervention_transfection_type_gene.png' target = 'blank'>
+      
       <figure id = 'transfection type gene'>
+        <a href = 'intervention_transfection_type_gene.png' target = 'blank'>
         <img src = 'intervention_transfection_type_gene.png' alt = ''>
+        </a>
         <figcaption>Note that the intervention through transfection of FLAG-TRIP6 is of type gene. This example is also a good example of where it is appropriate to add a <a>floating tag</a> when key elements (<a>assayed</a> or <a>intervention</a>) are missing from the figure legend.</figcaption>
       </figure>  
-      </a>
+      
 
 
 
@@ -229,12 +253,14 @@
         <aside class="example">A RAS-GFP fusion protein includes the RAS protein as an <a>assayed component</a> and GFP as a <a>reporter component</a>.</aside>
         <aside class="example">The luciferase gene can be used a <a>reporter</a> gene to monitor the transcriptional activity of a given gene promoter, which is the actual <a>assayed component</a> of interest.</aside>
         
-        <a href = 'luciferase.png' target = 'blank'>
+        
         <figure id = 'luciferase'>
+          <a href = 'luciferase.png' target = 'blank'>
           <img src = 'luciferase.png' alt = ''>
+          </a>
           <figcaption>In this luciferase experiment, what is being measured is the effect of miR-16-5p on the 3'UTR of Bdnf, so Bdnf is labelled as the assayed component.</figcaption>
         </figure>
-        </a>
+        
 
 
 
@@ -254,12 +280,13 @@
     	<p>When a <a>component</a> is used to compare multiple experimental groups but it is not possible to clearly infer a cause-and-effect relationship between this <a>component</a> and the <a>assayed components</a> of the experiment, the <a>component</a> is said to be an <dfn data-lt="experimental variables">experimental variable</dfn>.</p>
     	<aside class="example">If the expression of a given gene is measured across tissues and cell lines, including liver, muscle, brain, HEK293 and HeLa cells, the tissues or cell types are tagged as <a>experimental variables</a>.</aside>
       
-      <a href = 'experimental_variable.png' target = 'blank'>
       <figure id = 'experimental variable'>
-        <img src = 'experimental_variable.png' alt = ''>
+        <a href = 'experimental_variable.png' target = 'blank'>
+          <img src = 'experimental_variable.png' alt = ''>
+        </a>
         <figcaption>In this example, expression of ArfGAP1 is assayed in several cell types in parallel. This is the prototypical definition of an <a>experimental variable</a>.</figcaption>
       </figure>
-      </a>
+      
     
     </section>
       
@@ -306,12 +333,14 @@
    <ul>
    <li>The reserved expression <code>'multiple components'</code> should be included as floating tag, with the relevant entity <a>type</a> and with the role <a>assayed component</a>.</li>
    
-   <a href = 'multiple_components3.png' target = '_blank'>
+   
    <figure id = 'multiple components'>
+    <a href = 'multiple_components3.png' target = '_blank'>
     <img src = 'multiple_components3.png' alt = ''>
+    </a>
     <figcaption>Note how individual metabolites are captured under the expression <code>multiple components</code> in this example.</figcaption>
    </figure> 
-  </a>
+  
 
     <li>Both the measurement type (protein expression, protein-DNA interactions, protein-protein interactions, etc...) and the assay technology (experimental platform such as the sequencing platform, mass spec platform, etc...) as mentioned in Materials & Methods should be tagged as <a>experimental assay</a>, if necessary as <a>floating tag</a>.</li>
     <li>The experimental system that is profiled should be added as <a>biological component</a>, even if it requires adding a <a>floating tag</a>.</li> 
