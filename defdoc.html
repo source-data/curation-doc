@@ -336,9 +336,20 @@
 				   
 
     <section class="appendix">
-      <h2>Special cases: FACS, cell cycle phases and DNA staining</h2>
+      <h2>Special cases: Protein complexes, FACS, cell cycle phases and DNA staining</h2>
       <p>Some experimental designs are unique in nature. For the following cases, these guidelines should be observed: 
-      <ul><li>FACS experiments: for FACS experiments, SourceData captures both the cells and the DNA (or whichever element is stained and sorted) as <a>assayed components</a></li>
+      <ul>
+          <li>Protein complexes: although the intuitive normalization for protein complexes would be of type protein, it is more adequate to assign them the type "subcellular component" because the Gene Ontology (GO) database contains normalized references for protein complexes. An example of this would be RNA Polymerase II, which is made up of a number of individual subunits. See the example below</li>
+            <figure id = 'protein complexes'>
+              <a href = 'protein_complexes.png' target = '_blank'>
+              <img src = 'protein_complexes.png' alt = ''>
+              </a>
+              <figcaption> Notice how in this example RNA-Pol-II is assigned the type "subcellular component", which can be normalize to the GO database.</figcaption>
+             </figure> 
+    
+
+
+        <li>FACS experiments: for FACS experiments, SourceData captures both the cells and the DNA (or whichever element is stained and sorted) as <a>assayed components</a></li>
         
         <figure id = 'FACS'>
           <a href = 'FACS.png' target = '_blank'>
