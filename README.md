@@ -2,6 +2,7 @@
 Documentation on definitions and procedures for the SourceData curation system (http://sourcedata.embo.org).
 
 The HTML document is formatted using the @ReSpec tools (https://github.com/w3c/respec). 
+
 ##Table of Content
 
 1. Introduction
