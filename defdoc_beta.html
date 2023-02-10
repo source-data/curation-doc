@@ -206,14 +206,7 @@
         <figcaption>In the example above, tubulin is the normalizing component.</figcaption>
       </figure>
       
-      <aside class="note">If a molecular marker, for example  the protein EEA1, is assayed to visualize a higher order structure, for example endosomal vesicles, the marker (EEA1 in this example) is tagged as an <a>assayed component</a>. The higher order structure (endosomal vesicles in this example) is <a>tagged</a> as <a>assayed component</a> only if it is explicitly highlighted on the image or a property of the entity (such as number/localisation) is mentioned in the text of the legend.</aside>
-      
-      <figure id = 'molecular marker'>
-        <a href = 'markers.png' target = 'blank'>
-         <img src = 'markers.png' alt = ''>
-        </a>  
-        <figcaption>In this case, HDEL is an ER marker, so it is captured as an <a>assayed component</a>. In addition, because there is a specific reference to the ER in the legend, ER is also captured as an <a>assayed component</a>. Note that in this example there is a second marker, CMAC, which is however a reporter as is therefore captured as a <a>reporter</a> for vacuole, which is labelled as an <a>assayed component</a> </figcaption>
-      </figure>
+    	<aside class="note">If a molecular marker, for example  the protein EEA1, is assayed to visualize a higher order structure, for example endosomal vesicles, the marker (EEA1 in this example) is tagged as an <a>assayed component</a>. The higher order structure (endosomal vesicles in this example) is <a>tagged</a> as <a>assayed component</a> only if it is explicitly highlighted on the image or a property of the entity (such as number/localisation) is mentioned in the text of the legend.</aside>
       </section>
     	
     	<section>
@@ -311,14 +304,6 @@
     <p>In addition to entities, SourceData is also experimenting with the tagging of non-entity terms. In particular, the <dfn data-lt="experimental assay|experimental assays">experimental assay</dfn> used to observed or measure the <a>assayed components</a> of an experiment are tagged and normalized to identifiers either from the BioAssay ontology (<a href="bioassayontology.org/">BAO</a>) or from the Ontology for Biomedical Investigations (<a href="http://obi-ontology.org/">OBI</a>)</p>
     <aside class="note">At present, SourceData only captures experimental assays used to actually collect data, i.e., associated with the <a>assayed component</a>. The experimental assay used to induce the <a>intervention</a> should not be tagged. In addition, SourceData strives to capture the <a>experimental assay</a> itself and not necessarily the METHOD. If both the assay and the method are explicitly mentioned in the figure legend, SourceData captures both. If not, only the <a>experimental assay</a> is captured, either as tag in the figure legend or as a floating tag if missing.</aside>  
     <aside class="example">If a figure represents images from an immunostaining, it suffices to annotate "immunostaining" as the <a>experimental assay</a> and there is no need to add a floating tag for "microscopy" if this is not present in the figure legend</a>.</aside> 
-  
-    <figure id = 'experimental assay vs method'>
-      <a href = 'assay_method.png' target = '_blank'>
-      <img src = 'assay_method.png' alt = ''>
-      </a>
-      <figcaption>In this example, the <a>experimental assay</a> is 'gene expression measurement' and the method is qRT-PCR. Because qRT-PCR is mentioned in the figure legend, it is captured. However, 'gene expression' is also added as a <a>floating tag</a> to capture the <a>experimental assay</a> for the experiment.</figcaption>
-     </figure> 
-  
   </section>
 				   
 				   
@@ -335,26 +320,15 @@
 				   
 
     <section class="appendix">
-      <h2>Special cases: Protein complexes, FACS, cell cycle phases and DNA staining</h2>
+      <h2>Special cases: FACS, cell cycle phases and DNA staining</h2>
       <p>Some experimental designs are unique in nature. For the following cases, these guidelines should be observed: 
-      <ul>
-          <li>Protein complexes: although the intuitive normalization for protein complexes would be of type protein, it is more adequate to assign them the type "subcellular component" because the Gene Ontology (GO) database contains normalized references for protein complexes. An example of this would be RNA Polymerase II, which is made up of a number of individual subunits. See the example below</li>
-            <figure id = 'protein complexes'>
-              <a href = 'protein_complexes.png' target = '_blank'>
-              <img src = 'protein_complexes.png' alt = ''>
-              </a>
-              <figcaption> Notice how in this example RNA-Pol-II is assigned the type "subcellular component", which can be normalize to the GO database.</figcaption>
-             </figure> 
-    
-
-
-        <li>FACS experiments: for FACS experiments, SourceData captures both the cells and the DNA (or whichever element is stained and sorted) as <a>assayed components</a></li>
+      <ul><li>FACS experiments: for FACS experiments, SourceData captures both the cells and the DNA (or whichever element is stained and sorted) as <a>assayed components</a></li>
         
         <figure id = 'FACS'>
           <a href = 'FACS.png' target = '_blank'>
           <img src = 'FACS.png' alt = ''>
           </a>
-          <figcaption>In this example, HeLa cells are stained with AnnexinV to measure cell death. Both HeLa cells and AnnexinV are captured as <a>assayed components</a>.</figcaption>
+          <figcaption>In this example, HeLa cells are stained with AnnexinV to measure cell death. Both HeLa cells and AnnexinV are captured as assayed components.</figcaption>
          </figure> 
 
 
